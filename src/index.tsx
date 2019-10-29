@@ -95,7 +95,8 @@ export namespace ReactDadata {
 
   export interface Props  {
     token: string
-    placeholder?: string
+    placeholder?: string,
+    name?: string,
     query?: string
     autoload?: boolean
     count?: number
@@ -308,6 +309,7 @@ export class ReactDadata extends React.PureComponent<ReactDadata.Props, ReactDad
           <input className={classNames.join(' ')}
                  disabled={this.props.disabled}
                  placeholder={this.props.placeholder ? this.props.placeholder : ''}
+                 name={this.props.name ? this.props.name : ''}
                  value={this.state.query}
                  ref={ (input) => { this.textInput = input as HTMLInputElement; } }
                  onChange={this.onInputChange}
